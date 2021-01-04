@@ -29,14 +29,14 @@
             <span>{{ index + 1 }}</span> {{ step.title }}
           </li>
         </ul>
-        <div v-if="steps.length-1 !== activeIndex">
+        <button class="btn"
+                @click="reset"
+                v-if="lastStepCheck"
+        >Начать заново</button>
+        <div v-else>
           <button class="btn" @click="prev">Назад</button>
           <button class="btn primary" @click="nextOfFinish">Вперед</button>
         </div>
-        <button class="btn"
-                @click="reset"
-                v-else
-        >Начать заново</button>
       </div>
     </div>
   </div>

@@ -40,11 +40,13 @@ const App = {
     // 2. выключена ли кнопка назад
     prevDisable() {
       if (this.activeIndex === 0) {
-
        return prevBtn = true
       }
-    }
+    },
     // 3. находимся ли мы на последнем шаге
+    lastStepCheck() {
+      return this.steps.length-1 === this.activeIndex
+    }
   }
 }
 
