@@ -29,14 +29,17 @@
             <span>{{ index + 1 }}</span> {{ step.title }}
           </li>
         </ul>
+
         <button class="btn"
                 @click="reset"
-                v-if="lastStepCheck"
+                v-if="finish"
         >Начать заново</button>
         <div v-else>
-          <button class="btn" @click="prev">Назад</button>
-          <button class="btn primary" @click="nextOfFinish">Вперед</button>
+          <button class="btn" @click="prev" :disabled="prevDisable">Назад</button>
+          <button class="btn primary" @click="nextOfFinish" >{{ lastStepCheck }}</button>
         </div>
+
+
       </div>
     </div>
   </div>
