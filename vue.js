@@ -25,11 +25,7 @@ const App = {
     },
     nextOfFinish() {
       // кнопка вперед или закончить
-      if (this.lastStepCheck === 'Закончить') {
-        this.finish = true
-      } else {
-        this.activeIndex++
-      }
+      this.lastStepCheck ? this.finish = true : this.activeIndex++
     },
     setActive(idx) {
       // когда нажимаем на определенный шаг
@@ -44,11 +40,11 @@ const App = {
     },
     // 2. выключена ли кнопка назад
     prevDisable() {
-      if (this.activeIndex === 0) return true
+      return this.activeIndex === 0
     },
     // 3. находимся ли мы на последнем шаге
     lastStepCheck() {
-      return this.steps.length-1 === this.activeIndex ? 'Закончить' : 'Вперед'
+      return this.steps.length-1 === this.activeIndex
     }
   }
 }

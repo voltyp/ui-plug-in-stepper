@@ -36,7 +36,7 @@
         >Начать заново</button>
         <div v-else>
           <button class="btn" @click="prev" :disabled="prevDisable">Назад</button>
-          <button class="btn primary" @click="nextOfFinish" >{{ lastStepCheck }}</button>
+          <button class="btn primary" @click="nextOfFinish" >{{ lastStepCheck ? 'Закончить' : 'Вперед' }}</button>
         </div>
 
 
